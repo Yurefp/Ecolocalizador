@@ -125,7 +125,7 @@ def df2y(x, y):
 
 #===================================================================================================================
 #Função para Newton-Raphson normal
-def fun_norm(t, x, y):
+def fun_norm(t, x, y):      #Função normal
     i=0
     for i in range (0,t):
         J = np.array([[Df1x(x, y), Df1y(x, y)],[Df2x(x, y), Df2y(x, y)]])
@@ -138,7 +138,7 @@ def fun_norm(t, x, y):
     return [x, y]
 
 #Função para Newton-Raphson normal arredondado
-def fun_arr(t, x, y):
+def fun_arr(t, x, y):       #Função arredondano
     i=0
     for i in range (0,t):
         J = np.array([[df1x(x, y), df1y(x, y)],[df2x(x, y), df2y(x, y)]])
@@ -176,7 +176,7 @@ plt.show()'''
 #===================================================================================================================
 #Função de quantidade de repetições para x% de precição
 
-def fun_arr_perc(p, x, y):
+def fun_arr_perc(p, x, y):      #Função arredondando
     cicl=0
     while((x/e[0] < p or x/e[0] > (2-p)) and (y/e[1] < p or y/e[1] > p)):
         J = np.array([[df1x(x, y), df1y(x, y)],[df2x(x, y), df2y(x, y)]])
@@ -191,7 +191,7 @@ def fun_arr_perc(p, x, y):
 
     return cicl
 
-def fun_norm_perc(p, x, y):
+def fun_norm_perc(p, x, y):     #Função normal
     cicl=0
     while((x/e[0] < p or x/e[0] > (2-p)) and (y/e[1] < p or y/e[1] > p)):
         J = np.array([[Df1x(x, y), Df1y(x, y)],[Df2x(x, y), Df2y(x, y)]])
@@ -258,7 +258,7 @@ while(abs(x - xant) > 10**(-3) and abs(y - yant) > 2**(-3)):
 print("Ciclos:", cicl)'''
 
 #===================================================================================================================
-
+#Gera uma imagem da sala no plano com a posição dos sesnores, do emissor e da posição calculada do emissor
 '''plt.scatter(e[0], e[1])
 plt.scatter(x, y, s=10)
 plt.scatter([x1, x2, x3], [y1, y2, y3], c='r')
